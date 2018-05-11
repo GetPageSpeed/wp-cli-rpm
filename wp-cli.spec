@@ -2,7 +2,7 @@
 # http://opensource.org/licenses/MIT
 
 Name: wp-cli
-Version: 1.5.0 
+Version: 1.5.1
 Release: 1%{?dist}
 Summary: The command line interface for WordPress
 
