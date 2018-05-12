@@ -3,7 +3,7 @@
 
 Name: wp-cli
 Version: 1.5.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: The command line interface for WordPress
 
 License: MIT 
@@ -37,13 +37,16 @@ without using a web browser.
 %install
 %{__rm} -rf $RPM_BUILD_ROOT
 %{__mkdir} -p $RPM_BUILD_ROOT%{_bindir}
-%{__install} -m 755 -p %SOURCE0 $RPM_BUILD_ROOT%{_bindir}/%{name}
+%{__install} -m 755 -p %SOURCE0 $RPM_BUILD_ROOT%{_bindir}/wp
 
 %files
 %defattr(-,root,root)
-%{_bindir}/%{name}
+%{_bindir}/wp
 
 %changelog
+* Sat May 12 2018 Danila Vershinin <info@getpagespeed.com> 1.5.1-2
+- Fix the name of executable file
+
 * Fri May 11 2018 Danila Vershinin <info@getpagespeed.com> 1.5.0-1
 - First release
 
