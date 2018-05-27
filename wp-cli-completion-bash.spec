@@ -5,7 +5,7 @@ Release: 1%{?dist}
 License: GPL
 URL: https://github.com/wp-cli/wp-cli
 
-Source0: https://github.com/wp-cli/wp-cli/archive/%{version}/wp-cli-%{version}.tar.gz
+Source0: https://github.com/wp-cli/wp-cli/archive/v%{version}/wp-cli-%{version}.tar.gz
 
 BuildArch: noarch
 Requires: bash-completion
