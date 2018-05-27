@@ -3,7 +3,7 @@
 
 Name: wp-cli
 Version: 1.5.1
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: The command line interface for WordPress
 
 License: MIT 
@@ -12,13 +12,10 @@ Source0: https://github.com/wp-cli/%{name}/releases/download/v%{version}/%{name}
 
 BuildArch: noarch
 
-Requires:  php(language) >= 5.5
+Requires:  php(language) >= 5.3
 Requires:  php-mbstring
 Requires:  php-openssl
 Requires:  php-xml
-
-# TODO: Get info from phpcompatinfo reports for 1.5.0
-
 
 %description
 WP-CLI is the command-line interface for WordPress. You can 
@@ -44,6 +41,9 @@ without using a web browser.
 %{_bindir}/wp
 
 %changelog
+* Sat May 12 2018 Danila Vershinin <info@getpagespeed.com> 1.5.1-3
+- Relax minimum PHP requirements to PHP 5.3
+
 * Sat May 12 2018 Danila Vershinin <info@getpagespeed.com> 1.5.1-2
 - Fix the name of executable file
 
