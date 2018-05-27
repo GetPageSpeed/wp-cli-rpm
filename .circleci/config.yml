@@ -14,8 +14,6 @@ jobs: # a collection of steps
   el6:
     docker: # run the steps with Docker
       - image: getpagespeed/rpmbuilder:centos-6
-    environment:
-      RPMLINT: 0
     working_directory: /sources # directory where steps will run
     <<: *defaults
   el7:
