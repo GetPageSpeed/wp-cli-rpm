@@ -3,12 +3,13 @@
 
 Name: wp-cli
 Version: 2.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 Summary: The command line interface for WordPress
 
 License: MIT 
 URL: https://wp-cli.org/
 Source0: https://github.com/wp-cli/%{name}/releases/download/v%{version}/%{name}-%{version}.phar
+Source1: https://raw.githubusercontent.com/wp-cli/wp-cli/master/LICENSE
 
 BuildArch: noarch
 
@@ -39,8 +40,14 @@ without using a web browser.
 %files
 %defattr(-,root,root)
 %{_bindir}/wp
+# Virtually add license macro for EL6:
+%{!?_licensedir:%global license %%doc}
+%license LICENSE
 
 %changelog
+* Sun Sep 2 2018 Danila Vershinin <info@getpagespeed.com> 2.0.1-2
+- install LICENSE as well
+
 * Fri Aug 24 2018 Danila Vershinin <info@getpagespeed.com> 2.0.1-1
 - upstream version auto-updated to 2.0.1
 

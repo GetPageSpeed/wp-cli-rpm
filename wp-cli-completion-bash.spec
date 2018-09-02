@@ -1,11 +1,12 @@
 Summary: A bash completion helper for wp-cli
 Name: wp-cli-completion-bash
 Version: 2.0.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: GPL
 URL: https://github.com/wp-cli/wp-cli
 
 Source0: https://github.com/wp-cli/wp-cli/archive/v%{version}/wp-cli-%{version}.tar.gz
+Source1: https://raw.githubusercontent.com/wp-cli/wp-cli/master/LICENSE
 
 BuildArch: noarch
 Requires: bash-completion
@@ -35,8 +36,14 @@ modules with the wp-cli command.
 %files
 %defattr(-, root, root, 0755)
 %config %{_sysconfdir}/bash_completion.d/*
+# Virtually add license macro for EL6:
+%{!?_licensedir:%global license %%doc}
+%license LICENSE
 
 %changelog
+* Sun Sep 2 2018 Danila Vershinin <info@getpagespeed.com> 2.0.1-2
+- install LICENSE as well
+
 * Fri Aug 24 2018 Danila Vershinin <info@getpagespeed.com> 2.0.1-1
 - upstream version auto-updated to 2.0.1
 
