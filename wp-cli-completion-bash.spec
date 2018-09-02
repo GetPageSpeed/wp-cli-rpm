@@ -26,6 +26,8 @@ modules with the wp-cli command.
 %{__rm} -rf $RPM_BUILD_ROOT
 %{__install} -d -m0755 $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/
 %{__install} -Dp -m0755 utils/wp-completion.bash $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/
+%{__mkdir} -p $RPM_BUILD_ROOT%{_datadir}/doc/%{name}
+%{__install} -m 644 -p %SOURCE1 $RPM_BUILD_ROOT%{_datadir}/doc/%{name}/
 
 %post
 . /etc/profile.d/bash_completion.sh

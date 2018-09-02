@@ -36,6 +36,8 @@ without using a web browser.
 %{__rm} -rf $RPM_BUILD_ROOT
 %{__mkdir} -p $RPM_BUILD_ROOT%{_bindir}
 %{__install} -m 755 -p %SOURCE0 $RPM_BUILD_ROOT%{_bindir}/wp
+%{__mkdir} -p $RPM_BUILD_ROOT%{_datadir}/doc/%{name}
+%{__install} -m 644 -p %SOURCE1 $RPM_BUILD_ROOT%{_datadir}/doc/%{name}/
 
 %files
 %defattr(-,root,root)
