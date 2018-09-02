@@ -44,7 +44,8 @@ without using a web browser.
 %{_bindir}/wp
 # Virtually add license macro for EL6:
 %{!?_licensedir:%global license %%doc}
-%license LICENSE
+%dir %{_datadir}/doc/%{name}
+%license %{_datadir}/doc/%{name}/LICENSE
 
 %changelog
 * Sun Sep 2 2018 Danila Vershinin <info@getpagespeed.com> 2.0.1-2
