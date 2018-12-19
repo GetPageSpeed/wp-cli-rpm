@@ -2,8 +2,8 @@
 # http://opensource.org/licenses/MIT
 
 Name: wp-cli
-Version: 2.0.1
-Release: 2%{?dist}
+Version: 2.1.0
+Release: 1%{?dist}
 Summary: The command line interface for WordPress
 
 License: MIT 
@@ -48,6 +48,9 @@ without using a web browser.
 %license %{_datadir}/doc/%{name}/LICENSE
 
 %changelog
+* Wed Dec 19 2018 Danila Vershinin <info@getpagespeed.com> 2.1.0-1
+- upstream version auto-updated to 2.1.0
+
 * Sun Sep 2 2018 Danila Vershinin <info@getpagespeed.com> 2.0.1-2
 - install LICENSE as well
 
