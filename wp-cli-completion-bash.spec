@@ -36,8 +36,8 @@ modules with the wp-cli command.
 . /etc/profile.d/bash_completion.sh
 
 %files
-%defattr(-, root, root, 0755)
-%config %{_sysconfdir}/bash_completion.d/*
+%defattr(-, root, root)
+%{_sysconfdir}/bash_completion.d/*
 # Virtually add license macro for EL6:
 %{!?_licensedir:%global license %%doc}
 %dir %{_datadir}/doc/%{name}
