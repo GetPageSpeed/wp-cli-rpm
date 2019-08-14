@@ -2,8 +2,8 @@
 # http://opensource.org/licenses/MIT
 
 Name: wp-cli
-Version: 2.2.0
-Release: 2%{?dist}
+Version: 2.3.0
+Release: 1%{?dist}
 # EPEL now builds a shitty wp-cli that requires Apache to be installed - we don't want this:
 Epoch: 1
 Summary: The command line interface for WordPress
@@ -50,6 +50,9 @@ without using a web browser.
 %license %{_datadir}/doc/%{name}/LICENSE
 
 %changelog
+* Wed Aug 14 2019 Danila Vershinin <info@getpagespeed.com> 2.3.0-1
+- upstream version auto-updated to 2.3.0
+
 * Fri Apr 26 2019 Danila Vershinin <info@getpagespeed.com> 2.2.0-1
 - upstream version auto-updated to 2.2.0
 
