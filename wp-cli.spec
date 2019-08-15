@@ -3,7 +3,7 @@
 
 Name: wp-cli
 Version: 2.3.0
-Release: 1%{?dist}
+Release: 2%{?dist}
 # EPEL now builds a shitty wp-cli that requires Apache to be installed - we don't want this:
 Epoch: 1
 Summary: The command line interface for WordPress
