@@ -1,9 +1,14 @@
 # wp-cli-rpm
 
-Install the most recent version of WP-CLI on CentOS/RHEL 6 and 7.
+Install the most recent version of WP-CLI on CentOS/RHEL 6+.
 
-    yum install https://extras.getpagespeed.com/release-el$(rpm -E %{rhel})-latest.rpm
-    yum install wp-cli
+## Synopsis
+
+    sudo yum install https://extras.getpagespeed.com/release-el$(rpm -E %{rhel})-latest.rpm
+    sudo yum install wp-cli
+    cd /path/to/wp
+    # rename site? no problem:
+    wp search-replace https://foo.example.com https://bar.example.com
 
 Install bash completions:
 
