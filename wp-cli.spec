@@ -2,7 +2,7 @@
 # http://opensource.org/licenses/MIT
 
 Name: wp-cli
-Version: 2.4.1
+Version: 2.5.0
 Release: 1%{?dist}
 # EPEL now builds a shitty wp-cli that requires Apache to be installed - we don't want this:
 Epoch: 1
@@ -50,6 +50,9 @@ without using a web browser.
 %license %{_datadir}/doc/%{name}/LICENSE
 
 %changelog
+* Thu May 20 2021 Danila Vershinin <info@getpagespeed.com> 2.5.0-1
+- release 2.5.0
+
 * Wed Feb 19 2020 Danila Vershinin <info@getpagespeed.com> 2.4.1-1
 - upstream version auto-updated to 2.4.1
 
