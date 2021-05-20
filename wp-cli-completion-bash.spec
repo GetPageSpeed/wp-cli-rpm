@@ -6,7 +6,6 @@ License: GPL
 URL: https://github.com/wp-cli/wp-cli
 
 Source0: https://github.com/wp-cli/wp-cli/archive/v%{version}/wp-cli-%{version}.tar.gz
-Source1: https://raw.githubusercontent.com/wp-cli/wp-cli/master/LICENSE
 
 BuildArch: noarch
 Requires: bash-completion
@@ -27,7 +26,7 @@ modules with the wp-cli command.
 %{__install} -d -m0755 $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/
 %{__install} -Dp -m0644 utils/wp-completion.bash $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/
 %{__mkdir} -p $RPM_BUILD_ROOT%{_datadir}/doc/%{name}
-%{__install} -m 644 -p %SOURCE1 $RPM_BUILD_ROOT%{_datadir}/doc/%{name}/
+%{__install} -m 644 -p LICENSE $RPM_BUILD_ROOT%{_datadir}/doc/%{name}/
 
 %post
 . /etc/profile.d/bash_completion.sh
