@@ -1,6 +1,6 @@
 Summary: A bash completion helper for wp-cli
 Name: wp-cli-completion-bash
-Version: 2.6.0
+Version: 2.7.0
 Release: 1%{?dist}
 License: GPL
 URL: https://github.com/wp-cli/wp-cli
@@ -43,6 +43,9 @@ modules with the wp-cli command.
 %license %{_datadir}/doc/%{name}/LICENSE
 
 %changelog
+* Thu Oct 13 2022 Danila Vershinin <info@getpagespeed.com> 2.7.0-1
+- release 2.7.0
+
 * Wed Jan 26 2022 Danila Vershinin <info@getpagespeed.com> 2.6.0-1
 - release 2.6.0
 
