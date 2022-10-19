@@ -48,9 +48,9 @@ modules with the %{name} command in bash shell.
 %install
 %{__rm} -rf $RPM_BUILD_ROOT
 %{__mkdir} -p $RPM_BUILD_ROOT%{_bindir}
-%{__install} -m 755 -p LICENSE $RPM_BUILD_ROOT%{_bindir}/wp
+%{__install} -m 755 -p %SOURCE1 $RPM_BUILD_ROOT%{_bindir}/wp
 %{__mkdir} -p $RPM_BUILD_ROOT%{_datadir}/doc/%{name}
-%{__install} -m 644 -p %SOURCE1 $RPM_BUILD_ROOT%{_datadir}/doc/%{name}/
+%{__install} -m 644 -p LICENSE $RPM_BUILD_ROOT%{_datadir}/doc/%{name}/
 
 # bash completions
 %if 0%{?rhel} && 0%{?rhel} < 7
