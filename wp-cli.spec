@@ -26,6 +26,17 @@ update plugins, configure multisite installs and much more,
 without using a web browser.
 
 
+%package completion-bash
+Group:          System Environment/Shells
+Summary:        A bash completion helper for %{name}
+Requires:       %{name} = %{?epoch:%{epoch}:}%{version}-%{release}
+Requires:       bash-completion
+
+%description completion-bash
+Install this package to enable tab-completion of functions and installed
+modules with the %{name} command in bash shell.
+
+
 %prep
 # Nothing to do
 
@@ -41,6 +52,24 @@ without using a web browser.
 %{__mkdir} -p $RPM_BUILD_ROOT%{_datadir}/doc/%{name}
 %{__install} -m 644 -p %SOURCE1 $RPM_BUILD_ROOT%{_datadir}/doc/%{name}/
 
+# bash completions
+%if 0%{?rhel} && 0%{?rhel} < 7
+%{__install} -Dp -m0644 utils/wp-completion.bash \
+  $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/%{name}.bash
+%else
+%{__install} -Dp -m0644 utils/wp-completion.bash \
+  $RPM_BUILD_ROOT%{_datadir}/bash-completion/completions/%{name}
+%endif
+
+
+%post completion-bash
+. /etc/profile.d/bash_completion.sh
+
+
+%postun completion-bash
+. /etc/profile.d/bash_completion.sh
+
+
 %files
 %defattr(-,root,root)
 %{_bindir}/wp
@@ -48,6 +77,15 @@ without using a web browser.
 %{!?_licensedir:%global license %%doc}
 %dir %{_datadir}/doc/%{name}
 %license %{_datadir}/doc/%{name}/LICENSE
+
+
+%files completion-bash
+%if 0%{?rhel} && 0%{?rhel} < 7
+%config %{_sysconfdir}/bash_completion.d/*
+%else
+%{_datadir}/bash-completion/completions/*
+%endif
+
 
 %changelog
 * Tue Oct 18 2022 Danila Vershinin <info@getpagespeed.com> 2.7.1-1
