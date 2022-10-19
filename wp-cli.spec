@@ -10,8 +10,8 @@ Summary: The command line interface for WordPress
 
 License: MIT 
 URL: https://wp-cli.org/
-Source0: https://github.com/wp-cli/%{name}/releases/download/v%{version}/%{name}-%{version}.phar
-Source1: https://raw.githubusercontent.com/wp-cli/wp-cli/master/LICENSE
+Source0: https://github.com/wp-cli/wp-cli/archive/v%{version}/wp-cli-%{version}.tar.gz
+Source1: https://github.com/wp-cli/%{name}/releases/download/v%{version}/%{name}-%{version}.phar
 
 BuildArch: noarch
 
@@ -38,7 +38,7 @@ modules with the %{name} command in bash shell.
 
 
 %prep
-# Nothing to do
+%setup -n wp-cli-%{version}
 
 
 %build
@@ -48,7 +48,7 @@ modules with the %{name} command in bash shell.
 %install
 %{__rm} -rf $RPM_BUILD_ROOT
 %{__mkdir} -p $RPM_BUILD_ROOT%{_bindir}
-%{__install} -m 755 -p %SOURCE0 $RPM_BUILD_ROOT%{_bindir}/wp
+%{__install} -m 755 -p LICENSE $RPM_BUILD_ROOT%{_bindir}/wp
 %{__mkdir} -p $RPM_BUILD_ROOT%{_datadir}/doc/%{name}
 %{__install} -m 644 -p %SOURCE1 $RPM_BUILD_ROOT%{_datadir}/doc/%{name}/
 
