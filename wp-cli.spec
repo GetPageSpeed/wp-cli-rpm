@@ -2,7 +2,7 @@
 # http://opensource.org/licenses/MIT
 
 Name: wp-cli
-Version: 2.8.0
+Version: 2.8.1
 Release: 1%{?dist}
 # EPEL now builds a shitty wp-cli that requires Apache to be installed - we don't want this:
 Epoch: 1
@@ -88,6 +88,9 @@ modules with the %{name} command in bash shell.
 
 
 %changelog
+* Tue Jun 06 2023 Danila Vershinin <info@getpagespeed.com> 2.8.1-1
+- release 2.8.1
+
 * Thu Jun 01 2023 Danila Vershinin <info@getpagespeed.com> 2.8.0-1
 - release 2.8.0
 
